@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calcular.css">
     <title>Calculadora</title>
 </head>
 <body>
-    <h1> Calcule a altura e o tempo de subida</h1>
-    <span id="p1"></span>  <br /> 
-    <span id="p2"></span>    
+    <div class="contaienr" id="con"> 
+        <h1> Calcule a altura e o tempo de subida</h1>
+        <input type="text" name="valor1" id="v1">
+        <button onclick="calcular()"> calcular</button> <br />
+        <span id="p1"></span>  <br /> 
+        <span id="p2"></span>    
  
-    <div  class="ok" id="resu">
-
+       
     </div>
-    <input type="text" name="valor1" id="v1">
-    <button onclick="calcular()"> calcular</button>
-</body>
+
     <script>
         var vel1 = document.querySelector("#v1")
         var g = 10
@@ -26,16 +27,10 @@
 
         function calcular(){
             var Ts = parseInt(vel1.value) / g;
-            var Hmax = parseInt(vel1.value * vel1.value) / parseInt(2*g);
-            m.innerHTML = String("o tempo de subida foi: ") + Ts   
-            m2.innerHTML = String("A altura máxima é foi: ") +Hmax 
-        
-        
-        
+            var Hmax = parseInt(vel1.value ** 2) / parseInt(2*g);
+            m.innerHTML = String("o tempo de subida foi: ") + Ts  
+            m2.innerHTML = String("A altura máxima é foi: ") + Hmax 
         }
-
-
-
-
     </script>
+    </body>
 </html>
