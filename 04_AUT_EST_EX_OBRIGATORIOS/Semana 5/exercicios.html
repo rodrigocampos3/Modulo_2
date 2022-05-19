@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora - Exercicios obrigatorios da semana 5 </h1>
+    <div style="text-align: center;background-color: aqua; right: 100%;">
+        <p>digite o primeiro valor
+            <input type="text" class="entrada" id="n1" placeholder="valor 1" style="">
+        </p>
+        <p>digite o segundo valor
+        <input type="text" class="entrada" id="n2" placeholder="valor 2"><br>
+        </p>
+        <h3>Selecione a operação que deseja realizar</h3>
+        <button onclick="soma()" style="width: 100px;">+</button>
+        <button onclick="subtrai()" style="width: 150px; position: right;">-</button>
+        <button onclick="multi()" style="width: 150px;" >*</button>
+        <button onclick="divisao()" style="width: 150px;">/</button>
+        <button onclick="divisao_r()" style="width: 150px;">%</button><br>
+        <div>
+            <H1>O resultado é:</H1> <h2 id="resultado"></h2>
+        </div>
+        
+    </div>
+<script>
+let n1 = document.querySelector("#n1")
+let n2 = document.querySelector("#n2")
+let mostra_resu = document.querySelector("#resultado")
+function soma(){
+let r_soma = parseInt(n1.value) + parseInt(n2.value)
+mostra_resu.innerHTML = String(r_soma)
+}
+
+function subtrai(){ 
+let sub = parseInt(n1.value) - parseInt(n2.value)
+mostra_resu.innerHTML = String(sub)
+
+}
+function multi(){ 
+let ml = parseInt(n1.value) * parseInt(n2.value)
+mostra_resu.innerHTML = String(ml)
+
+}
+function divisao(){ 
+let div = parseInt(n1.value) / parseInt(n2.value)
+mostra_resu.innerHTML = String(div)
+
+}
+function divisao_r(){ 
+let div_r = parseInt(n1.value) % parseInt(n2.value)
+mostra_resu.innerHTML = String(div_r)
+
+}
+
+
+
+
+
+
+
+</script>
+
+ 
+
+    
+</body>
+</html>
