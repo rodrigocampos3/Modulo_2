@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body cstyle="background-color: rgb(165, 165, 165)">
+    <center>
+    <h3>Insira o valor do produto
+        <input type="text" id="valorP">
+    </h3><br>
+    <button onclick="tes()">Ver quantidade de notas</button>
+    <p id="m"></p>
+</center>
+<script>
+    var most = document.querySelector("#m")
+function tes(){
+    let val = (document.querySelector("#valorP"))
+    var valor = val.value
+    var n100 = 0
+    var n50 = 0
+    var n20 = 0
+    var n10 = 0
+    var n5 = 0
+    var n2 = 0
+    while (valor >= 100) {
+        n100 += 1;
+        valor = valor - 100;
+        var nota_1 = String(n100 + " notas de R$: 100,00")
+    }
+    while (valor >= 50) {
+        n50 += 1;
+        valor = valor - 50;
+        var nota_2 = String(n50 + " notas de R$: 50,00")
+        }
+    while (valor >= 20) {
+        n20 += 1;
+        valor = valor - 20;
+        var nota_3 = String(n20 + " notas de R$: 20,00")
+    }
+    while (valor >= 10) {
+        n10 += 1;
+        valor = valor - 10;
+        var nota_4 = String(n10 + " notas de R$: 10,00")
+    }
+    while (valor >= 5) {
+        n5 += 1;
+        valor = valor - 5;
+        var nota_5 = String(n5 + " notas de R$: 5,00")
+    }
+    while (valor >= 2) {
+        n2 += 1;
+        valor = valor - 2;
+        var nota_6 = String(n2 + " notas de R$: 2,00")
+    }
+most.innerHTML= String (nota_1 + ", \n " + nota_2 + ", \n " + nota_3 + ", \n" + nota_4 + ", \n" + nota_5 + ", \n" + nota_6)
+
+}
+
+</script>
+
