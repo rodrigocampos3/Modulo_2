@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Ordenar Números</H1>
+    <h3>Digite seus números separados por virgula
+    <input type="text" id="inp">
+    <span id="cx1"></span>
+    </h3>
+    <h3>Digite um número foco
+        <input type="text" id="inp2">
+        <span id="cx2"></span>
+    </h3>
+    <button onclick="arr()">Go</button>
+    <script>
+        function arr(){
+        let campo1 = document.querySelector("#cx1")
+        let campo2 = document.querySelector("#cx2")
+        let input2 = String(document.querySelector("#inp2").value)
+        let valor = String(document.querySelector("#inp").value)
+        let Tarray = valor.split(",")
+        Tarray.sort();
+        console.log(Tarray)
+        campo1.innerHTML = Tarray
+        if(Tarray.includes(input2)){
+        let resu2 = Tarray.indexOf(input2)
+        campo2.innerHTML = resu2
+        }
+        else{
+
+            console.log("Deu ruim")
+            campo2.innerHTML = "Deu Ruim"
+        }
+        }
+    </script>
+</body>
+</html>
