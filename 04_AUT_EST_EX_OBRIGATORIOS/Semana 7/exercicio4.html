@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voo</title>
+</head>
+<body>
+    <h1> voo </h1>
+    <input type="text" id="al">informe a quantidade de pessoas
+    <input type="text" id="txt">Informe o periodo
+    <button onclick="calc()">Calcular</button>
+    <span id="resu"></span>
+</body>
+<script>
+    var pessoas = parseInt(document.querySelector("#al").value)
+    var periodo =String(document.querySelector("#txt").value)
+    var resultado = document.querySelector("#resu")
+    function calc(){
+        var valorT = 0
+        var valorP = 0
+        if (periodo == "diurno"){
+            let pass1 = 200
+            if(pessoas > 50){   
+                valorP = pass1 - ((40/100) * pass1);
+                valorT = ValorT * pessoas;
+                console.log(valorP)
+                alert("Valor por pessoa =" + valorP + "\n valor total ="+ valorT)
+            }
+            else{
+                valorP = 200;
+                ValorT = 200 * pessoas;
+                console.log(valorP, valorT)
+                alert("Valor por pessoa =" + valorP + "\n valor total ="+ valorT)
+            }
+        }
+        else if (periodo == "noturno"){
+            let pass2 = 100;
+            if(pessoas > 50){
+                 valorP= pass2 - ((20/100) * pass2);
+                 valorT= valorP * pessoas;
+                console.log(valorP,valorT)
+                alert("Valor por pessoa =" + valorP + "\n valor total ="+ valorT)
+            }
+            else{
+                 valorP= 100
+                 valorT= 100 * pessoas;
+                alert("Valor por pessoa =" + valorP + "\n valor total ="+ valorT)
+            }
+        }
+    }
+</script>
+</html>

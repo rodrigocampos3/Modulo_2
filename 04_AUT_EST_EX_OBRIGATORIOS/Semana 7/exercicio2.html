@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inverter</title>
+</head>
+<body>
+    <h1>Inverter textos</h1>
+    <input type="text" id="t1">Digite seu primeiro texto
+    <input type="text" id="t2">Digite seu segundo texto <br> <br>
+    <button onclick="inv()" style="width: 400px;">Inverter</button>
+    
+</body>
+<script>
+let texto1 = document.querySelector("#t1")
+let texto2 = document.querySelector("#t2")
+function inv(){
+    let tex1 = String(texto1.value);
+    let tex2 = String(texto2.value);
+    texto2.value = tex1;
+    texto1.value = tex2
+    
+
+}
+
+
+</script>
+
+</html>

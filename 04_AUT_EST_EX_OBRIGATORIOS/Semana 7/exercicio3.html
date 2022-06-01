@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number phone</title>
+</head>
+<body>
+    <input type="text" id="phone">Insira seu número de telefone da seguinte maneira (xx)xxxxx-xxxx
+    <button onclick="verifica()">Verificar</button>
+    <script>
+        var num = String(document.querySelector("#phone").value);
+        var liNum = num.split('');
+        function verifica(){
+            if(liNum[0] == "(" && liNum[3] == ")" && liNum[9] == "-"){
+            alert("Número verificado com sucesso!!")
+            }
+            else{
+                alert("Verifique seu número novamente")
+            }
+        }
+        //o código só está funcionando uma vez no html, não consegui resolver isso
+    </script>
+    
+</body>
+</html>

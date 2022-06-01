@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adcionar unidade</title>
+</head>
+<body>
+    <H1>Adcionar e remover unidades</H1>
+    <input type="text" id="valor">
+    <button onclick="ad()" id="adcionar"> adcionar</button>
+    <button onclick="sub()" id="subtrair">subtrair</button>
+</body>
+<script>
+    let valor = document.querySelector("#valor")
+    function ad(){ //adciona unidade
+        let val = parseInt(valor.value);
+        var res = val + 1;
+        valor.value = res //mostra o valor no campo de input
+    }
+    function sub(){
+        let val2 = parseInt(valor.value); //subtrai unidade
+        var res2 = val2 - 1;
+        valor.value = res2;
+    }
+</script>
+</html>
