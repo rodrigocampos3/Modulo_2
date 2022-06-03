@@ -8,7 +8,9 @@ const hostname = '127.0.0.1';
 const portback = 3071;
 const sqlite3 = require('sqlite3').verbose();
 const server = express();
-const DBPATH = 'curriculo.db';
+const DBPATH = 'db.db';
+server.use(express.static("."));
+
 
 server.use(express.json());
 
@@ -23,7 +25,7 @@ server.get('/users', (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-  var sql = 'SELECT * FROM User';
+  var sql = 'SELECT * FROM exp';
 	db.all(sql, [],  (err, rows ) => {
 		if (err) {
 		    throw err;
@@ -34,11 +36,11 @@ server.get('/users', (req, res) => {
 });
 
 // Insere um registro (é o C do CRUD - Create)
-server.post('/insert', urlencodedParser, (req, res) => {
+server.post('/userinsert', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-	sql = "INSERT INTO User (userId, Nome, Sobrenome) VALUES ('" + req.body.id + "', '"+req.body.nome+"', '"+req.body.sobr+"')";
+	sql = "INSERT INTO exp (id, nome, email, faculdade) VALUES ('" + req.body.id + "', " + req.body.nome + "', " + req.body.email + "', " + req.body.faculdade + "')";
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {
@@ -54,7 +56,7 @@ server.post('/userupdate', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	//res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-	sql = "UPDATE User SET nome = '" + req.body.nome + "' WHERE userId = " + req.body.id;
+	sql = "UPDATE exp SET nome = '" + req.body.nome + "' WHERE id = " + req.body.id;
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {
@@ -70,7 +72,7 @@ server.post('/userdelete', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-	sql = "DELETE FROM User WHERE nome = " + req.body.nome;
+	sql = "DELETE FROM exp WHERE id = " + req.body.id;
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {
