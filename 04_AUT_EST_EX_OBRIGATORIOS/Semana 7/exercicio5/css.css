@@ -20,5 +20,18 @@ button {
     width: 150px;
 font-size: large;
 
+}
+main {
+width: 100%;
+align-items: center;
+align-self: center;
+text-align: center;
+}
+main input {
+width: 100px;
+
+
+
+
 
 }

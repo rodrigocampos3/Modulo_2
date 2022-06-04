@@ -9,37 +9,60 @@
     <title>Document</title>
 </head>
 <body>
-    <div id=div1>
+    <div id="div1">
         <h1>Insira a quantidade de alunos</h1>
         <input type="text" id="al" pla><br>
         <button onclick="veQuantidade()">Next</button>
-        <main id="resposta"></main>
     </div>
+    <main id="resposta"></main>
+    <div id="e"></div>
     
 </body>
     <script>
+        let list = []
         function veQuantidade(){
+            let lista = [1,2,3,4,5,6]
             let vAlunos = document.querySelector("#al").value
-            let Al = parseInt(vAlunos)
+            var Al = parseInt(vAlunos)
             console.log(parseInt(vAlunos))
-            let list = []
             let Z = 0
-            while (Z < Al) {
+            let ta = ''
+            ta += '<h1> Caulcule as notas dos alunos </h1>'
+            while (Z < Al) { //Este while cria um campo para cada aluno 
                 list.push("1");
-                Z += 1
-                console.log(list)
+                Z += 1;
+                ta += '<br/> <input id="nm" placeholder="Nome do aluno"></inpt> <input id="np" placeholder="Nota da prova"></inpt> <input id="nt" placeholder="Nota do Trabalho"></inpt>  <br/>'
             };
-             list.forEach(element => {
-                campo = '<div>';
-                campo += '<div>';
-                campo += '<h1>'+list.length+'</h1>';
-                campo += '<h2>op</h2>';
-                campo += '</div>';
-                });
-        console.log(list.length);
-        $('#resposta').html(campo);
+            $("#div1").remove()
+            ta += '<button onclick="calc()">Calcular Notas</button>'
+            $("#resposta").html(ta) // Cria no html as tags inseridas nas variaveis
+            console.log(list)
+        };
+        function calc(){
+            let lisando = [];
+            let zero = 0
+            console.log(list.length)
+            let mostra = ''
+            let marcador = 0
+            marcaP = 1
+            while (zero < list.length) {
+            lisando.push(document.querySelector("#nm").value);
+            lisando.push(parseInt(document.querySelector("#np").value));
+            lisando.push(parseInt(document.querySelector("#nt").value));
+            res = (lisando[marcador+1]+lisando[marcador+2])/2;
+            console.log(res)
+            mostra += '<p> Nome do aluno '+lisando[marcador]+' nota média='+ res +' ';
+            $("#e").html(mostra);
+            console.log(lisando);
+            $("#np").remove();
+            $("#nm").remove();
+            $("#nt").remove();
+            marcador += 3; //consegui fazer até essa parte, se não não conseguiria fazer o restante dos exercicios..
         }
         
+        
+        }
+
     </script>
 </html>
 
