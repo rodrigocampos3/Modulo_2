@@ -40,7 +40,7 @@ server.post('/userinsert', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-	sql = "INSERT INTO exp (id, nome, email, faculdade) VALUES ('" + req.body.id + "', " + req.body.nome + "', " + req.body.email + "', " + req.body.faculdade + "')";
+	sql = "INSERT INTO exp (id, nome, email, faculdade) VALUES ('" + req.body.id + "', '" + req.body.nome + "', '" + req.body.email + "', '" + req.body.faculdade + "')";
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {
@@ -52,7 +52,7 @@ server.post('/userinsert', urlencodedParser, (req, res) => {
 });
 
 // Atualiza um registro (é o U do CRUD - Update)
-server.post('/userupdate', urlencodedParser, (req, res) => {
+server.patch('/userupdate', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	//res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
@@ -68,7 +68,7 @@ server.post('/userupdate', urlencodedParser, (req, res) => {
 });
 
 // Exclui um registro (é o D do CRUD - Delete)
-server.post('/userdelete', urlencodedParser, (req, res) => {
+server.delete('/userdelete', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
