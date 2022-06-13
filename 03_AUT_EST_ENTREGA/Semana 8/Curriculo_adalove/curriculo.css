@@ -1,0 +1,28 @@
+* {
+background-color:rgb(255, 255, 255);
+}
+#insert {
+align-items: center;
+align-self: center;
+text-align: center;
+
+
+
+}
+#parte1 {
+text-align: center;
+font: optional;
+}
+#objetivo {
+text-align: left;
+
+}
+#comentario {
+text-align: center;
+font: optional;
+
+
+
+
+
+}
