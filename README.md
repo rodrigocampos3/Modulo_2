@@ -5,3 +5,6 @@ Minhas entregas estão definidas aqui:
 ## Obrigatórios
 <a href="https://github.com/Intelihub/Template_Aluno/blob/main/03_EX_OBRIGATORIOS/Coloque%20aqui%20entregas%20de%20exerc%C3%ADcios%20obrigat%C3%B3rios.rtf"> 19/04/2022 - Entrega 6 </a>
 No entregavel da semana 6 criei um endpoint para fazer um metodo get no curriculo
+<a href="https://github.com/Intelihub/Template_Aluno/blob/main/03_EX_OBRIGATORIOS/Coloque%20aqui%20entregas%20de%20exerc%C3%ADcios%20obrigat%C3%B3rios.rtf"> 19/04/2022 - Entrega 9 </a>
+Nesta semana eu fiz a integração do front e back do curriculo
+
