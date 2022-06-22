@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>Exercicio  1 da semana 9 </h1>
+    <input type="text" id="inp"><br>
+    <button onclick="calc()">Calcular</button><br>
+    <span id="res"></span>
+    </center>
+    
+
+    <script>
+ 
+        function calc(){
+            var valor = String(document.querySelector("#inp").value)
+            var val = valor.split("");
+            var resu = document.querySelector("#res")
+            resu.innerHTML = ''
+            if (val[0] == 1 || val[0] == 3 || val[0] == 5 || val[0] == 7 || val[0] == 9){
+
+                console.log("O primeiro número é impar")
+                resu.innerHTML = String("O primeiro valor é impar")
+                
+            }
+            else{
+                console.log("O primeiro número é par")
+                resu.innerHTML = String("O primeiro valor é par")
+
+
+            }
+
+    }
+
+
+
+    </script>
+</body>
+</html>

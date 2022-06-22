@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <title>Exercicio 3 da semana 9</title>
+    <center>
+    <h1>Ordenando Nomes</h1>
+    <input type="text" placeholder="nomde 1" id="v1"> 
+    <input type="text" placeholder="nomde 2" id="v2">
+    <input type="text" placeholder="nomde 3" id="v3"><br><br>
+    <span id="res"></span>
+    <button onclick="ord()">Ordenar</button>
+    </center>
+<script>
+            function ord(){
+            console.log("olá")
+            var valor1 = document.querySelector("#v1").value
+            var valor2 = document.querySelector("#v2").value
+            var valor3 = document.querySelector("#v3").value
+            var resu = document.querySelector("#res")
+            var list = []
+            list.push(valor1,valor2,valor3)
+            var sortear = list.sort((a,b) => {
+                return a.localeCompare();
+
+
+
+            })
+            console.log(sortear)
+            resu.innerHTML = sortear;
+        }
+
+
+
+</script>
+</body>
+</html>
